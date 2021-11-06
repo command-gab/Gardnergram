@@ -1,4 +1,4 @@
-## Project: Gardner Grounds
+## Project: Gardnergram
 This project is a full-stack appliaction with authentication that allows users to view a feed of posts and like/comment on other users posts.
 
 ## Details
