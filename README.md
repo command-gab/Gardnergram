@@ -4,6 +4,7 @@ This project is a full-stack appliaction with authentication that allows users t
 ## Details
 Languages used — EJS, CSS, JavaScript, Node.js, Express, MongoDB.
 
-![feed](https://user-images.githubusercontent.com/88905557/140624037-e081b651-3119-4c4a-a114-ab91458e8e0a.png)
+![feed](https://user-images.githubusercontent.com/88905557/140650070-2348bd49-27b8-408b-9a67-221d2b032de2.png)
+
 ![post](https://user-images.githubusercontent.com/88905557/140624052-1c076d7e-e4e1-4595-bf39-1a6f0ea2440a.png)
 
