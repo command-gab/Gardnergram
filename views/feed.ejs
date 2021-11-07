@@ -27,12 +27,8 @@
                 <h4><%= posts[i].caption %></h4>
               </a>  
                <a href="/page/<%= posts[i].postedBy %>">User: <%= posts[i].postedBy %></a>
-              <span id="heart" data-id="<%= posts[i]._id %>"><%= posts[i].heart %></span>
-              <% if(posts[i].heart > 0){ %>
-                <span><i class="fa fa-heart" aria-hidden="true"></i></span>
-                <%} else {%>
-                  <span><i class="fa fa-heart" aria-hidden="true"></i></span>
-                  <%}%>
+              <span class="likeCount" data-id="<%= posts[i]._id %>"><%= posts[i].postLikes %></span>
+               <button class="likeBtn" data-id="<%= posts[i]._id %>">Like</button>
             </li>
           <% } %>
           </ul>
