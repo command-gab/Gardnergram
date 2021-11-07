@@ -131,28 +131,27 @@ module.exports = function (app, passport, db, multer, ObjectId) {
 
 	// message board routes ===============================================================
 
-	// app.put('/likePost', (req, res) => {
-	// 	let likedPostId = ObjectId(req.body.likedPostId);
-	// 	let totalLikes = Number(req.body.totalLikes);
-	// 	db.collection('posts').findOneAndUpdate(
-	// 		{ _id: likedPostId },
-	// 		{
-	// 			$set: {
-	// 				// send up the innertext counting the total likes?
-	// 				postLikes: totalLikes + 1,
-	// 			},
-	// 		},
-	// 		{
-	// 			sort: { _id: -1 },
-	// 			upsert: true,
-	// 		},
-	// 		(err, result) => {
-	// 			if (err) return res.send(err);
+	app.put('/likePost', (req, res) => {
+		let likedPostId = ObjectId(req.body.likedPostId);
+		db.collection('posts').findOneAndUpdate(
+			{ _id: likedPostId },
+			{
+				$inc: {
+					// send up the innertext counting the total likes?
+					postLikes: 1,
+				},
+			},
+			{
+				sort: { _id: -1 },
+				upsert: true,
+			},
+			(err, result) => {
+				if (err) return res.send(err);
 
-	// 			res.send(result);
-	// 		}
-	// 	);
-	// });
+				res.send(result);
+			}
+		);
+	});
 
 	app.put('/feed', (req, res) => {
 		let totalLikes = Number(req.body.totalLikes);
