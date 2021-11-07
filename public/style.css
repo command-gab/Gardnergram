@@ -54,6 +54,14 @@ button[type=submit]{
   height:2em;
 }
 
+.likeBtn{
+  background-color:rgb(216, 115, 143);
+  height: 2em;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+
 /* .profile{
   margin-left: -4%;
   font-size: 25px;
