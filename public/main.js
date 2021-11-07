@@ -1,49 +1,27 @@
-let heart = document.getElementsByClassName("fa-heart");
+let likeBtn = document.getElementsByClassName('likeBtn');
 let trash = document.getElementsByClassName('fa-trash');
 
-// Array.from(likeBtn).forEach(function (element) {
-// 	element.addEventListener('click', function () {
-// 		const likedPostId = this.parentNode.childNodes[4].dataset.id;
-// 		const totalLikes = this.parentNode.childNodes[4].innerText;
+Array.from(likeBtn).forEach(function (element) {
+	element.addEventListener('click', function () {
+		const likedPostId = element.dataset.id
+		console.log('likedPostId:', likedPostId)
+		const totalLikes = this.parentNode.childNodes[4].innerText;
 
-// 		fetch('likePost', {
-// 			method: 'put',
-// 			headers: { 'Content-Type': 'application/json' },
-// 			body: JSON.stringify({
-// 				likedPostId: likedPostId,
-// 				totalLikes: totalLikes,
-// 			}),
-// 		})
-// 			.then(response => {
-// 				if (response.ok) return response.json();
-// 			})
-// 			.then(data => {
-// 				console.log(data);
-// 				window.location.reload();
-// 			});
-// 	});
-// });
-
-Array.from(heart).forEach(function(element) {
-	element.addEventListener('click', function(){
-	  const id = this.parentNode.parentNode.childNodes[1].innerText
-	  const heart = parseFloat(this.parentNode.parentNode.childNodes[5].innerText)
-
-	  fetch('feed', {
-		method: 'put',
-		headers: {'Content-Type': 'application/json'},
-		body: JSON.stringify({
-		  '_id': id,
-		  'heart': heart,
+		fetch('likePost', {
+			method: 'put',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				likedPostId: likedPostId,
+				totalLikes: totalLikes,
+			}),
 		})
-	  })
-	  .then(response => {
-		if (response.ok) return response.json()
-	  })
-	  .then(data => {
-		// console.log(data)
-		// window.location.reload(true)
-	  })
+			.then(response => {
+				if (response.ok) return response.json();
+			})
+			.then(data => {
+				console.log(data);
+				window.location.reload();
+			});
 	});
 });
 
